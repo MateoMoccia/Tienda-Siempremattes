@@ -1,0 +1,46 @@
+.item-detail-container{
+    display: flex;             
+    justify-content: space-evenly;  
+    gap: 20px;                  
+    align-items: center;
+}
+.item-detail-image{
+    width: 500px;
+margin-left: 200px;
+border: 10px solid black;
+}
+.item-detail-info {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    border: 1px solid #ddd;
+    font-size: 60px;
+    text-align: right;
+    width: 60%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    opacity: 0; 
+    animation: fadeIn 1s ease-out forwards; 
+}
+h4 {
+    font-family: "Playfair Display", serif;
+    font-weight: 800px;
+    font-style: normal;
+    text-align: right;
+    font-size: 80px;
+margin-bottom: 100px;
+}
+.item-description-titulo {
+    font-size: 30px ;
+    text-decoration: underline;
+}
+.item-description{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+}

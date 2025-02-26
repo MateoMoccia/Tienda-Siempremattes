@@ -1,0 +1,183 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 60px 80px; 
+    gap: 40px; 
+    background-color: rgb(248, 241, 241); 
+    color: #333; 
+    font-family: 'Arial', sans-serif; 
+    text-align: center;
+    border-radius: 15px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+}
+
+
+.container > * {
+    border-radius: 10px; 
+    padding: 20px; 
+    background-color: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    transition: all 0.3s ease; 
+}
+
+.container > *:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.container-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px;
+    gap: 50px;
+    background-color: rgb(248, 241, 241);
+
+    color: black;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.container-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    gap: 50px;
+    background-color: rgb(248, 241, 241);
+    color: black;
+    border: 5px solid #ddd;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;              
+    max-width: 100%;         
+    box-sizing: border-box;
+  }
+
+.item {
+    width: 220px;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: white;
+
+    
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50%;
+    font-size: 28px;
+    margin: 0 auto 15px auto;
+    color: black; /* Asegura que los iconos sean visibles */
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.item div {
+    font-size: 14px;
+    line-height: 1.5;
+}
+.graciasInstagram{
+    display: flex;               
+    gap: 20px;                  
+    align-items: center;
+}
+
+.gracias {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 70px;
+    margin-left: 300px;
+   
+
+}
+
+.instagramMensaje{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    font-size: 20px;
+}
+.LinkInstagram {
+    border: 1px solid #ddd;
+    width: 60%;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    text-decoration: none;
+    color: black;
+    transition: all 0.3s ease; 
+}
+
+.LinkInstagram:hover,
+.LinkInstagram:focus,
+.LinkInstagram:active {
+    margin: 0 10px; 
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transform: scale(1.05);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;  /* Centra los elementos horizontalmente */
+  }
+  
+  .icon {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.2s;
+  }
+  
+  .icon:hover {
+    transform: scale(1.2);
+  }
+
+  .contenedor-final {
+    align-items: center;
+    padding: 50px;
+    gap: 50px;
+    background-color: rgb(248, 241, 241);
+    color: black;
+    border: 5px solid #ddd;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    width: 100%;              
+    max-width: 100%;         
+    box-sizing: border-box;
+  }
+
+  .productos {
+    display: flex;              
+    justify-content: space-between; 
+    gap: 20px;                  
+    flex-wrap: wrap;           
+  }
+  

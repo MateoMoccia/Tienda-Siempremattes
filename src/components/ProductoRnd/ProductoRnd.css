@@ -1,0 +1,94 @@
+.ProductoRnd {
+  width: 350px; 
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  max-width: 100%;
+  font-family: "Raleway", serif;
+  opacity: 0; 
+  transform: translateY(-30px); 
+  animation: slideIn 1.5s ease-out forwards; 
+}
+
+/* Definición de la animación */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px); 
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); 
+  }
+}
+
+
+
+.ImagenContainer {
+  width: 350px; 
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ImagenProductos {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.NombreProductos {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+
+}
+
+.PrecioProductos {
+  font-size: 40px;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+}
+
+
+.ProductoRnd > .contador-container {
+  margin-top: auto; 
+  display: flex;
+  justify-content: flex-end; 
+  width: 100%;
+}
+
+.btn-detalles {
+border: 2px solid #000; 
+  background-color: white; 
+  color: black; 
+  padding: 10px 20px; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  font-weight: 750; 
+  transition: all 0.3s ease; 
+ margin-top: 30px;
+ text-decoration: none;
+ text-align: center;
+ font-family: "Raleway", serif;
+}
+
+.btn-detalles:hover {
+background-color: black;
+  color: white;
+  border-color: black; 
+  transform: scale(1.05); 
+}
