@@ -1,69 +1,47 @@
 import React from 'react';
-import ProductoRnd from '../ProductoRnd/ProductoRnd'
+import ProductoRnd from '../ProductoRnd/ProductoRnd';
 import './ProductoLista.css';
 
-
-
 export const Productos = [
-  { id: 1, imagen: "/ProyectoFinal-Moccia//img/Mini-Bag-Prana.png", nombre: "Mini Bag Prana", precio: "20.000", categoria: "carteras" },
-  { id: 2, imagen: "/ProyectoFinal-Moccia//img/Mini-Bag-Ananda.png", nombre: "Mini Bag Ananda", precio: "26.200", categoria: "carteras" },
-  { id: 3, imagen: "/ProyectoFinal-Moccia//img/Mini-Bag-Clasica.png", nombre: "Mini Bag Clasica", precio: "21.600", categoria: "carteras" },
-  { id: 4, imagen: "/ProyectoFinal-Moccia//img/Mini-Bag-Arya.png", nombre: "Mini Bag Arya", precio: "26.400", categoria: "carteras" },
-  { id: 5, imagen: "/ProyectoFinal-Moccia//img/Mini-Bag-Lua.png", nombre: "Mini Bag Lua", precio: "27.000", categoria: "carteras" },
-  { id: 6, imagen: "/ProyectoFinal-Moccia//img/Mini-Bag-Napoles.png", nombre: "Mini Bag Napoles", precio: "23.500", categoria: "carteras" },
-  { id: 7, imagen: "/ProyectoFinal-Moccia//img/Mini-Bag-Sara.png", nombre: "Mini Bag Sara", precio: "22.000", categoria: "carteras" },
-  { id: 8, imagen: "/ProyectoFinal-Moccia//img/Mini-Bag-Valley.png", nombre: "Mini Bag Valley", precio: "24.200", categoria: "carteras" },
-  { id: 9, imagen: "/ProyectoFinal-Moccia//img/Mini-Bag-Lola.png", nombre: "Mini Bag Lola", precio: "22.000", categoria: "carteras" },
-  { id: 10, imagen: "/ProyectoFinal-Moccia//img/Mini-Bag-Kendall.png", nombre: "Mini Bag Kendall", precio: "23.500", categoria: "carteras" },
-  { id: 11, imagen: "/ProyectoFinal-Moccia//img/Mini-Bag-Holly.png", nombre: "Mini Bag Holly", precio: "25.000", categoria: "carteras" },
-  { id: 12, imagen: "/ProyectoFinal-Moccia//img/Mini-Bag-California.png", nombre: "Mini Bag California", precio: "29.000", categoria: "carteras" },
+  { id: 1, imagen: "/catalogo-siempremates//img/Mate-camionero1.png", nombre: "Mate camionero de algarrobo con virola de acero inox: ", precio: "25.000", categoria: "Mates" },
+  { id: 2, imagen: "/catalogo-siempremates//img/Mate-camionero2.png", nombre: "Mate camionero int calabza con virola de acero", precio: "25.000", categoria: "Mates" },
+  { id: 3, imagen: "/catalogo-siempremates//img/Mate-imperial-calabaza1.png", nombre: "Mate Imperial int. calabaza con virola de acero inoxidable", precio: "28.500", categoria: "Mates" },
+  { id: 4, imagen: "/catalogo-siempremates//img/Mate-imperial-calabaza2.png", nombre: "Mate imperial int. calaaza con virola de alpaca ", precio: "34.500", categoria: "Mates" },
+  { id: 5, imagen: "/catalogo-siempremates//img/Mate-imperial-calabaza3.png", nombre: "Mate imperial int. calabaza con base reforzada y virola de alpaca", precio: "35.500", categoria: "Mates" },
+  { id: 6, imagen: "/catalogo-siempremates//img/Mate-imperial-calabaza4.png", nombre: "Mate imperial int.calabaza animal print con virola de alpaca", precio: "45.000", categoria: "Mates" },
+  { id: 7, imagen: "/catalogo-siempremates//img/Mate-imperial-calabaza5.png", nombre: "Mate imperial int. calabaza con base reforzada y virola de alpaca y bolitas de bronce ", precio: "58.000", categoria: "Mates" },
+  { id: 8, imagen: "/catalogo-siempremates//img/Mate-imperial-calabaza6.png", nombre: "Mate imperial croco int calabaza y base reforzada de alpaca ", precio: "50.000", categoria: "Mates" },
+  { id: 9, imagen: "/catalogo-siempremates//img/Mate-imperial-calabaza7.png", nombre: "Mate imperial repujado int. calabaza con virola de alpaca ", precio: "40.000", categoria: "Mates" },
+  { id: 10, imagen: "/catalogo-siempremates//img/Mate-torpedo1.png", nombre: "Mate torepdo int. calabaza con virola de alpaca cincelada", precio: "30.000", categoria: "Mates" },
+  { id: 11, imagen: "/catalogo-siempremates//img/Mate-torpedo2.png", nombre: "Mate torepdo int. calabaza con virola cincelada", precio: "33.000", categoria: "Mates" },
+  { id: 12, imagen: "/catalogo-siempremates//img/Mate-torpedo3.png", nombre: "Mate torepdo int calabza con viorola cincelada y base reforzada de alpaca con pelotitas de bronce ", precio: "57.000", categoria: "Mates" },
+  { id: 13, imagen: "/catalogo-siempremates//img/Mate-torpedo4.png", nombre: "Mate torepdo int. acero inox y viola de acero inox ", precio: "23.000", categoria: "Mates" },
+  { id: 14, imagen: "/catalogo-siempremates//img/Mate-torpedo5.png", nombre: "Mate torepdo algarrobo y virola de alpaca cincelada", precio: "29.000", categoria: "Mates" },
+  { id: 15, imagen: "/catalogo-siempremates//img/Mate-torpedo6.png", nombre: "Mate torepdo animal print int calabaza y virola de alpaca", precio: "45.000", categoria: "Mates" },
+  { id: 16, imagen: "/catalogo-siempremates//img/Mate-imperial-inoxidable.png", nombre: "Mate imperial int. acero inoxidale con virola de acero ", precio: "30.000", categoria: "Mates" },
+  { id: 17, imagen: "/catalogo-siempremates//img/Mate-imperial-algarrobo.png", nombre: "Mate imperial de algarrobo con virola de alpaca", precio: "28.000", categoria: "Mates" },
 
-  { id: 13, imagen: "/ProyectoFinal-Moccia//img/Bolso-Celine.png", nombre: "Bolso Celine", precio: "20.000", categoria: "bolsas" },
-  { id: 14, imagen: "/ProyectoFinal-Moccia//img/Bolso-Brix.png", nombre: "Bolso Brix", precio: "25.000", categoria: "bolsas" },
-  { id: 15, imagen: "/ProyectoFinal-Moccia//img/Bolso-Jacky.png", nombre: "Bolso Jacky", precio: "22.500", categoria: "bolsas" },
-  { id: 16, imagen: "/ProyectoFinal-Moccia//img/Bolso-Trix.png", nombre: "Bolso Trix", precio: "25.000", categoria: "bolsas" },
-  { id: 17, imagen: "/ProyectoFinal-Moccia//img/Bolso-Totebag.png", nombre: "Totebag", precio: "30.000", categoria: "bolsas" },
-  { id: 18, imagen: "/ProyectoFinal-Moccia//img/Morral-Caramel.png", nombre: "Morral Caramel", precio: "13.000", categoria: "bolsas" },
-  { id: 19, imagen: "/ProyectoFinal-Moccia//img/Morral-Jade.png", nombre: "Morral Jade", precio: "11.000", categoria: "bolsas" },
-  { id: 20, imagen: "/ProyectoFinal-Moccia//img/Morral-Preta.png", nombre: "Morral Preta", precio: "11.000", categoria: "bolsas" },
-  { id: 21, imagen: "/ProyectoFinal-Moccia//img/Morral-Hibra.png", nombre: "Morral Hibra", precio: "12.000", categoria: "bolsas" },
-  { id: 22, imagen: "/ProyectoFinal-Moccia//img/Bolso-Acuaria-Beige.png", nombre: "Bolso Acuaria", precio: "26.000", categoria: "bolsas" },
-  { id: 23, imagen: "/ProyectoFinal-Moccia//img/Bolso-Isela.png", nombre: "Bolso Isela", precio: "23.000", categoria: "bolsas" },
-  { id: 24, imagen: "/ProyectoFinal-Moccia//img/Bolso-Merida.png", nombre: "Bolso Merida", precio: "25.000", categoria: "bolsas" },
-  { id: 25, imagen: "/ProyectoFinal-Moccia//img/Bolso-Playa-Curazao.png", nombre: "Bolso Playero Curazao", precio: "30.500", categoria: "bolsas" },
-  { id: 26, imagen: "/ProyectoFinal-Moccia//img/Bolso-Playa-Negro.png", nombre: "Bolso Playero Cafe", precio: "30.000", categoria: "bolsas" },
-  { id: 27, imagen: "/ProyectoFinal-Moccia//img/Bolso-Playa-Cafe.png", nombre: "Bolso Playero Negro", precio: "30.000", categoria: "bolsas" },
+ 
+  { id: 0, imagen: "/catalogo-siempremates//img/bombilla1.png", nombre: "Bombilla pico de loro de acero inox", precio: "5.000", categoria: "Bombillas" },
+  { id: 0, imagen: "/catalogo-siempremates//img/bombilla2.png", nombre: "Bombilla chata de acero inox", precio: "3.500", categoria: "Bombillas" },
+  { id: 0, imagen: "/catalogo-siempremates//img/bombilla3.png", nombre: "Bombillon de alpaca premium", precio: "28.500", categoria: "Bombillas" },
+  { id: 0, imagen: "/catalogo-siempremates//img/bombilla4.png", nombre: "Bombillon de alpaca club de futrbol", precio: "22.000", categoria: "Bombillas" },
+  { id: 0, imagen: "/catalogo-siempremates//img/bombilla5.png", nombre: "Bombillon de alpaca premium con pico de bronce recto. caño labrado con 2 dijes ", precio: "30.000", categoria: "Bombillas" },
 
-  { id: 28, imagen: "/ProyectoFinal-Moccia//img/Cinturon-GG.png", nombre: "Cinturon Doble G", precio: "10.000", categoria: "cinturones" },
-  { id: 29, imagen: "/ProyectoFinal-Moccia//img/Cinturon-Astralyn.png", nombre: "Cinturon Astralyn", precio: "9.000", categoria: "cinturones" },
-  { id: 30, imagen: "/ProyectoFinal-Moccia//img/Cinturon-Beltura.png", nombre: "Cinturon Beltura ", precio: "7.500", categoria: "cinturones" },
-  { id: 31, imagen: "/ProyectoFinal-Moccia//img/Cinturon-Diesel.png", nombre: "Cinturon Diesel", precio: "11.000", categoria: "cinturones" },
-  { id: 32, imagen: "/ProyectoFinal-Moccia//img/Cinturon-Lunaris.png", nombre: "Cinturon Lunaris", precio: "8.500", categoria: "cinturones" },
-  { id: 33, imagen: "/ProyectoFinal-Moccia//img/Cinturon-Nordova.png", nombre: "Cinturon Nordova", precio: "8.000", categoria: "cinturones" },
-  { id: 34, imagen: "/ProyectoFinal-Moccia//img/Cinturon-Ojalillo.png", nombre: "Cinturon Ojalillo", precio: "7.000", categoria: "cinturones" },
-  { id: 35, imagen: "/ProyectoFinal-Moccia//img/Cinturon-Therona.png", nombre: "Cinturon Therona", precio: "9.500", categoria: "cinturones" },
-  { id: 36, imagen: "/ProyectoFinal-Moccia//img/Cinturon-Solvay.png", nombre: "Cinturon Solvay", precio: "8.500", categoria: "cinturones" },
-  { id: 37, imagen: "/ProyectoFinal-Moccia//img/Cinturon-Olynthe.png", nombre: "Cinturon Olynthe", precio: "9.000", categoria: "cinturones" },
-  { id: 38, imagen: "/ProyectoFinal-Moccia//img/Cinturon-Virella.png", nombre: "Cinturon Virella", precio: "7.500", categoria: "cinturones" },
-  { id: 39, imagen: "/ProyectoFinal-Moccia//img/Cinturon-Zentara.png", nombre: "Cinturon Zentara", precio: "9.000", categoria: "cinturones" },
-  
-  { id: 40, imagen: "/ProyectoFinal-Moccia//img/Collar-Aurora.png", nombre: "Collar Aurora", precio: "12.000", categoria: "accesorios" },
-  { id: 41, imagen: "/ProyectoFinal-Moccia//img/Collar-Bahia.png", nombre: "Collar Bahia", precio: "9.000", categoria: "accesorios" },
-  { id: 42, imagen: "/ProyectoFinal-Moccia//img/Collar-Bilbao.png", nombre: "Collar Bilbao", precio: "10.000", categoria: "accesorios" },
-  { id: 43, imagen: "/ProyectoFinal-Moccia//img/Collar-Cerecita.png", nombre: "Collar Cerecita", precio: "10.500", categoria: "accesorios" },
-  { id: 44, imagen: "/ProyectoFinal-Moccia//img/Collar-Coquete.png", nombre: "Collar Coquete", precio: "9.500", categoria: "accesorios" },
-  { id: 45, imagen: "/ProyectoFinal-Moccia//img/Collar-Iniciales.png", nombre: "Collar Iniciales", precio: "11.000", categoria: "accesorios" },
-  { id: 46, imagen: "/ProyectoFinal-Moccia//img/Pulsera-Bayona.png", nombre: "Pulsera Bayona", precio: "9.000", categoria: "accesorios" },
-  { id: 47, imagen: "/ProyectoFinal-Moccia//img/Pulsera-Nancy.png", nombre: "Pulsera Nancy", precio: "10.000", categoria: "accesorios" },
-  { id: 48, imagen: "/ProyectoFinal-Moccia//img/Pulsera-Nantes.png", nombre: "Pulsera Nantes", precio: "11.000", categoria: "accesorios" },
-  { id: 49, imagen: "/ProyectoFinal-Moccia//img/Pulsera-Pandora.png", nombre: "Pulsera Simil Pandora", precio: "10.500", categoria: "accesorios" },
-  { id: 50, imagen: "/ProyectoFinal-Moccia//img/Pulsera-Tours.png", nombre: "Pulsera Tours", precio: "12.000", categoria: "accesorios" },
-  { id: 51, imagen: "/ProyectoFinal-Moccia//img/Brazalete-Dorado.png", nombre: "Brazalete Dorado", precio: "13.000", categoria: "accesorios" },
+
+  { id: 0, imagen: "/catalogo-siempremates//img/", nombre: "", precio: "", categoria: "Termos" },
+
+  { id: 0, imagen: "/catalogo-siempremates//img/", nombre: "", precio: "", categoria: "Yerba" },
+
+  { id: 0, imagen: "/catalogo-siempremates//img/Matera1.png", nombre: "Matera 100% cuero negra", precio: "40.000", categoria: "Bolsos" },
+  { id: 0, imagen: "/catalogo-siempremates//img/Matera2.png", nombre: "Matera 100% cuero marron claro", precio: "40.000", categoria: "Bolsos" },
+
+
 
 
 ];
 
-const ProductosLista = ({ categoria, agregarAlCarrito }) => {
+const ProductosLista = ({ categoria }) => {
   const productosFiltrados = Productos.filter((producto) => producto.categoria === categoria);
 
   return (
@@ -76,7 +54,8 @@ const ProductosLista = ({ categoria, agregarAlCarrito }) => {
             imagen={producto.imagen}
             nombre={producto.nombre}
             precio={producto.precio}
-            agregarAlCarrito={agregarAlCarrito} />
+            sinExtras={false} // Asegura que el precio y el botón de detalles se muestren
+          />
         ))
       ) : (
         <p>No hay productos en esta categoría.</p>
@@ -86,3 +65,4 @@ const ProductosLista = ({ categoria, agregarAlCarrito }) => {
 };
 
 export default ProductosLista;
+

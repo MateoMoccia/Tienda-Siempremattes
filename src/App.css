@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+body, html {
+    background-color: #F2E8DA;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  h1 {
+    font-family: "Limelight", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+  }
+  
+  h2 {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    font-size: 45px; 
+    border: 1px solid #ddd;
+    width: 70%; 
+    margin: 20px auto;
+    padding: 15px; 
+    border-radius: 12px; 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+    background-color: #1C1C1C; 
+    color: #F2E8DA; 
+    opacity: 0; 
+    animation: fadeIn 1s ease-out forwards; 
+    transition: all 0.3s ease; 
+  }
+  
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  h2:hover {
+    color: #F2E8DA; 
+    border-color: whitesmoke; 
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+  }
+  
+  h3 {
+    font-family: "Playfair Display", serif;
+  }
+  

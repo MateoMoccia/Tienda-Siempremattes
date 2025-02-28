@@ -1,54 +1,147 @@
+.HeaderNav {
+  display: flex;
+  justify-content: space-between; /* Alinea los elementos a los extremos */
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  color: #F2E8DA;
+  width: 100%;
+  background-color: #1C1C1C;
+}
 
-  .HeaderNav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: white;
-    color: black;
-  }
-  .imgCarrito {
-        width: 30px;  
-        height: 30px;  
-      }
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between; /* Esto asegura que la imagen esté centrada */
+  align-items: center; /* Centra todos los elementos verticalmente */
+}
 
-      ul {
-        padding: 0; 
-        margin: 0;  
-        list-style: none; 
-        display: flex; 
-      }
-      
-      li:hover{
-        margin: 0 10px; 
-        background-color: black;
-        color: white;
-        justify-content: space-between;
-        text-decoration: none;
-        color: whitesmoke;
-        font-weight: bold;
-        padding: 5px 10px;
-        border-radius: 5px;
-        transform: scale(1.05);
-      }
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+}
 
-      li {
-        margin-right: 20px;
-        transition: all 0.3s ease; 
-      }
-      
-      li a {
-        text-decoration: none; 
-        display: inline-block; 
-        color: inherit; 
-        font-family: "Oswald", serif;
-        font-weight: 700;
-        font-style: normal;
-       letter-spacing: 2px;
-       font-size: 20px;
-       
-      }
+li {
+  margin-right: 20px;
+  transition: all 0.3s ease;
+}
 
-     
-      
-  
+li:hover {
+  margin: 0 10px;
+  background-color: #1C1C1C;
+  color: #F2E8DA;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transform: scale(1.05);
+}
+
+li a {
+  text-decoration: none;
+  display: inline-block;
+  color: inherit;
+  font-family: "Oswald", serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 20px;
+}
+
+.select-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre el texto y el select */
+}
+
+.select-container span {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: "Oswald", serif;
+
+}
+
+.custom-select {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+select {
+  padding: 5px 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #F2E8DA;
+  background-color: #1C1C1C;
+  color: #F2E8DA;
+  width: auto;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+/* Barra de búsqueda alineada a la derecha */
+.search-bar-container {
+  display: flex;
+  justify-content: flex-end; /* Alinea el contenido a la derecha */
+  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar input {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.search-bar button {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  margin-right: 20px;
+
+}
+
+.search-bar button:hover {
+  background-color: #1C1C1C;
+  border-color: #1C1C1C;
+  transform: scale(1.05);
+
+}
+
+.search-bar button svg {
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.search-bar button:hover svg {
+  color: white;
+}
+
+/* Estilo de la imagen centrada */
+.navbar-image {
+  width: 80px; /* Tamaño de la imagen */
+  height: 80px; /* Asegura que la imagen sea cuadrada */
+  border-radius: 50%; /* Redondea la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de animación */
+}
+
+.navbar-image:hover {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Añade una sombra alrededor de la imagen */
+}
