@@ -44,7 +44,7 @@ const NavBar = () => {
 
         {/* Imagen centrada en la barra de navegación */}
         <img 
-          src="public/img/logo-siempremates.jpg"
+          src="/catalogo-siempremates//img/logo-siempremates.jpg"
           alt="Logo siempremates"
           className="navbar-image"
         />
