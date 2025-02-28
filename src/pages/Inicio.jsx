@@ -7,17 +7,17 @@ const Inicio = () => {
 
   const productos = [
     {
-      imagen: '/img/Matera1.png',
+      imagen: '/catalogo-siempremates//img/Matera1.png',
       nombre: 'Matera 100% cuero negra',
       precio: 0
     },
     {
-      imagen: '/img/Mate-imperial-calabaza1.png',
+      imagen: '/catalogo-siempremates//img/Mate-imperial-calabaza1.png',
       nombre: 'Mate Imperial int. calabaza con virola de acero inox ',
       precio: 0
     },
     {
-      imagen: '/img/Mate-imperial-inoxidable.png',
+      imagen: '/catalogo-siempremates//img/Mate-imperial-inoxidable.png',
       nombre: 'Mate imperial int. acero inoxidale con virola de acero ',
       precio: 0
     }
@@ -40,7 +40,7 @@ const Inicio = () => {
       </article>
       <div className='container-2'>
         <div className='graciasInstagram'>
-          <img src="/img/imagensiempremates.jpg" alt="Imagensiempremates" />
+          <img src="/catalogo-siempremates//img/imagensiempremates.jpg" alt="Imagensiempremates" />
           <div className='textoContainer'>
             <p className='gracias'>Gracias por elegirnos</p>
             <p className='instagramMensaje'>No te olvides de publicar una foto con tu producto etiquetandonos para conseguir un 10% off en tu próxima compra!</p>
@@ -52,9 +52,9 @@ const Inicio = () => {
           <h3>Contacto</h3>
           <p>francoracing@gmail.com / 11-2393-9608</p>
           <h3> Métodos de pago</h3>
-          <img src="/img/imagen-visa.png" alt="imagen visa" />
-          <img src="/img/imagen-mercado-pago.jpg" alt="imagen mercado pago" />
-          <img src="/img/imagen-master-card.png" alt="imagen master card" />
+          <img src="/catalogo-siempremates//img/imagen-visa.png" alt="imagen visa" />
+          <img src="/catalogo-siempremates//img/imagen-mercado-pago.jpg" alt="imagen mercado pago" />
+          <img src="/catalogo-siempremates//img/imagen-master-card.png" alt="imagen master card" />
           <h3>Nuestras Redes Sociales</h3>
           <div className="social-icons">
             <a href="https://www.instagram.com/siempre.mates__/" target="_blank" rel="noopener noreferrer">

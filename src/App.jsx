@@ -12,9 +12,10 @@ import Yerba from './pages/Yerba';
 import Bolsos from './pages/Bolsos';  // Cambié el nombre de la ruta a Bolsos
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 
+
 const App = () => {
   return (
-    <Router>
+    <Router  basename="/catalogo-siempremates">
       <NavBar />
       <Routes>
         <Route path="/" element={<Inicio />} />
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/yerba" element={<Yerba />} />
         <Route path="/bolsos" element={<Bolsos />} />
         <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+
         
       </Routes>
     </Router>
