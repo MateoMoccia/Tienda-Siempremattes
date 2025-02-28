@@ -11,6 +11,7 @@ import Termos from './pages/Termos';
 import Yerba from './pages/Yerba';
 import Bolsos from './pages/Bolsos';  // Cambié el nombre de la ruta a Bolsos
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import CatalogoSiempremates from './pages/CatalogoSiempremates';  // Asegúrate de importar tu componente
 
 const App = () => {
   return (
@@ -24,8 +25,11 @@ const App = () => {
         <Route path="/mates" element={<Mates />} />
         <Route path="/termos" element={<Termos />} />
         <Route path="/yerba" element={<Yerba />} />
-        <Route path="/bolsos" element={<Bolsos />} />  {/* Cambié el nombre aquí también */}
+        <Route path="/bolsos" element={<Bolsos />} />
         <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+        
+        {/* Aquí agregas la nueva ruta */}
+        <Route path="/catalogo-siempremates" element={<CatalogoSiempremates />} /> 
       </Routes>
     </Router>
   );
