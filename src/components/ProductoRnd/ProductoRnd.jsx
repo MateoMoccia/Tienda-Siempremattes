@@ -2,7 +2,7 @@ import React from 'react';
 import './ProductoRnd.css';
 import { Link } from 'react-router-dom';
 
-const ProductoRnd = ({ imagen, nombre, precio, sinExtras }) => {
+const ProductoRnd = ({ id, imagen, nombre, precio, sinExtras }) => {
   return (
     <div className='ProductosContainer'>
       <div className='ProductoRnd'>
@@ -15,9 +15,9 @@ const ProductoRnd = ({ imagen, nombre, precio, sinExtras }) => {
         
         {/* Mostrar el botón solo si sinExtras es falso */}
         {!sinExtras && (
-          <Link to={`/detalle/${nombre}`} className='btn-detalles'>
-            <p>Ver detalles</p>
-          </Link>
+        <Link to={`/detalle/${id}`} className='btn-detalles'>
+        <p>Ver detalles</p>
+      </Link>      
         )}
       </div>
     </div>
