@@ -28,7 +28,6 @@ const NavBar = () => {
         <ul>
           <li><Link to="/">Inicio</Link></li>
           <li><Link to="/contacto">Contacto</Link></li>
-          <li><Link to="/quienes-somos">Quiénes Somos?</Link></li>
           <li className="select-container">
             <span>Seleccionar</span>
             <select value={producto} onChange={handleSelectChange} required>
@@ -52,7 +51,7 @@ const NavBar = () => {
 
       {/* Contenedor para la barra de búsqueda */}
       <div className="search-bar-container">
-        <div className="search-bar">
+        {/* <div className="search-bar">
           <input
             type="text"
             placeholder="Buscar..."
@@ -62,7 +61,7 @@ const NavBar = () => {
           <button onClick={handleSearch}>
             <FaSearch size={20} color="#F2E8DA" />
           </button>
-        </div>
+        </div> */}
       </div>
     </header>
   );

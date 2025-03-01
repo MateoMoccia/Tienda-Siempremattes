@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import QuienesSomos from './pages/QuienesSomos';
 import Contacto from './pages/Contacto';
 import Inicio from './pages/Inicio';
 import Bombillas from './pages/Bombillas';
@@ -19,7 +18,6 @@ const App = () => {
       <NavBar />
       <Routes>
         <Route path="/" element={<Inicio />} />
-        <Route path="/quienes-somos" element={<QuienesSomos />} />
         <Route path="/contacto" element={<Contacto />} />
         <Route path="/bombillas" element={<Bombillas />} />
         <Route path="/mates" element={<Mates />} />
