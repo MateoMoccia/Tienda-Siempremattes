@@ -1,6 +1,5 @@
 import React from 'react';
 import '../Styles/inicio.css';
-import { FaTruck, FaRedo, FaCreditCard, FaStore } from "react-icons/fa";
 import ProductoRnd from "../components/ProductoRnd/ProductoRnd"
 
 const Inicio = () => {
