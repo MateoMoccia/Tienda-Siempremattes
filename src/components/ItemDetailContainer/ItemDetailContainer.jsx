@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     setLoading(true);
     if (id) {
-      const productoEncontrado = Productos.find((p) => p.id === parseInt(id, 10));
+      const productoEncontrado = Productos.find((p) => p.id === Number(id));
       if (productoEncontrado) {
         setProducto(productoEncontrado);
       } else {

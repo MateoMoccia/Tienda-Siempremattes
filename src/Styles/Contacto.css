@@ -1,0 +1,141 @@
+/* General container styling */
+.contacto-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1000px; /* Aumento del tamaño máximo */
+    margin-top: 80px; /* Separación de la navbar */
+    transform: translateY(-20px); /* Levemente desplazado hacia arriba al cargar */
+    animation: fadeIn 0.6s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación de transformación y sombra al pasar el mouse */
+    text-align: center;
+    margin-left: auto; /* Centrado horizontal */
+    margin-right: auto; /* Centrado horizontal */
+  }
+  
+  /* Animación de entrada */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Efecto de hover: ampliación y cambio de sombra */
+  .contacto-container:hover {
+    transform: translateY(-20px) scale(1.03); /* Aumenta ligeramente el tamaño al pasar el mouse */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Sombra más grande al hacer hover */
+  }
+  
+  .contacto-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1c1c1c;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  .contacto-info {
+    font-size: 1.1rem;
+    color: #1c1c1c;
+    margin-bottom: 30px;
+    animation: fadeIn 1.2s ease-out;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .contacto-info p {
+    margin: 10px 0;
+  }
+  
+  .contacto-info strong {
+    color: #1c1c1c;
+  }
+  
+  .contacto-form-title {
+    font-size: 1.5rem;
+    color: #1c1c1c;
+    font-weight: bold;
+    margin-bottom: 10px;
+    animation: fadeIn 1.4s ease-out;
+  }
+  
+  .contacto-no-form {
+    font-size: 1.1rem;
+    color: #1c1c1c;
+    margin-top: 20px;
+    animation: fadeIn 1.6s ease-out;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .contacto-no-form p {
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  .contacto-no-form strong {
+    font-weight: bold;
+    color: #1c1c1c;
+  }
+  
+  /* Responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .contacto-container {
+      padding: 30px 20px;
+      margin-left: 15px;
+      margin-right: 15px;
+      max-width: 90%; /* Limitar el tamaño en pantallas más pequeñas */
+    }
+  
+    .contacto-title {
+      font-size: 2rem; /* Título más pequeño en pantallas pequeñas */
+    }
+  
+    .contacto-info {
+      font-size: 1rem; /* Texto de contacto más pequeño en pantallas pequeñas */
+    }
+  
+    .contacto-form-title {
+      font-size: 1.3rem; /* Título del formulario más pequeño */
+    }
+  
+    .contacto-no-form {
+      font-size: 1rem; /* Texto informativo más pequeño */
+    }
+  }
+  
+  /* Responsiveness for very small screens (portrait mode on phones like iPhone 13) */
+  @media (max-width: 480px) {
+    .contacto-container {
+      padding: 20px 15px; /* Menor padding en pantallas más pequeñas */
+      margin-left: 10px;
+      margin-right: 10px;
+      width: 90%; /* Asegura que el contenedor no sea demasiado grande en dispositivos pequeños */
+    }
+  
+    .contacto-title {
+      font-size: 1.8rem; /* Título más pequeño */
+    }
+  
+    .contacto-info {
+      font-size: 0.9rem; /* Texto de contacto más pequeño */
+    }
+  
+    .contacto-form-title {
+      font-size: 1.2rem; /* Título del formulario más pequeño */
+    }
+  
+    .contacto-no-form {
+      font-size: 0.9rem; /* Texto informativo más pequeño */
+    }
+  }
+  
