@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './NavBar.css';
 import { Link, useNavigate } from "react-router-dom";  // Importamos useNavigate
 import { FaSearch } from "react-icons/fa";
+import { h1 } from 'framer-motion/client';
 
 const NavBar = () => {
   const [producto, setProducto] = useState(""); 
