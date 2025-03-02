@@ -21,7 +21,11 @@ const NavBar = () => {
     // Redirige a la página correspondiente según el valor seleccionado
     if (selectedValue) {
       navigate(`/${selectedValue.toLowerCase()}`);
-      closeMenu(); // Cierra el menú al seleccionar una opción
+      
+      // Cierra el menú con un pequeño retraso para evitar conflictos con la selección
+      setTimeout(() => {
+        closeMenu(); 
+      }, 100); // 100ms de retraso
     }
   };
 
@@ -30,7 +34,7 @@ const NavBar = () => {
   };
 
   const closeMenu = () => {
-    setIsOpen(false); // Cierra el menú cuando se hace clic en un enlace o opción
+    setIsOpen(false); // Cierra el menú
   };
 
   // Este useEffect asegura que el menú se mantenga abierto si estamos en una ruta interna
@@ -56,8 +60,12 @@ const NavBar = () => {
           <li><Link to="/" onClick={closeMenu}>Inicio</Link></li>
           <li><Link to="/contacto" onClick={closeMenu}>Contacto</Link></li>
           <li className="select-container">
-            <span>Seleccionar</span>
-            <select value={producto} onChange={handleSelectChange} required>
+            <span onClick={closeMenu}>Seleccionar</span> {/* Cierra el menú al hacer clic en "Seleccionar" */}
+            <select 
+              value={producto} 
+              onChange={handleSelectChange} 
+              required 
+            >
               <option value=""></option>
               <option value="Bombillas">Bombillas</option>
               <option value="Mates">Mates</option>

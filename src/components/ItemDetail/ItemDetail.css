@@ -65,6 +65,7 @@ h4 {
     .item-detail-image {
         width: 70%;              /* Hace la imagen más pequeña */
         margin-left: 0;          /* Elimina el margen izquierdo */
+        margin-top: 20px;        /* Agrega un margen superior */
     }
 
     .item-detail-info {
@@ -97,6 +98,7 @@ h4 {
     .item-detail-image {
         width: 85%;              /* Hace la imagen más pequeña */
         margin-left: 0;          /* Elimina el margen izquierdo */
+        margin-top: 20px;        /* Agrega un margen superior */
     }
 
     .item-detail-info {
@@ -129,6 +131,7 @@ h4 {
     .item-detail-image {
         width: 90%;             /* Hace la imagen aún más pequeña */
         margin-left: 0;          /* Elimina el margen izquierdo */
+        margin-top: 20px;        /* Agrega un margen superior */
     }
 
     .item-detail-info {

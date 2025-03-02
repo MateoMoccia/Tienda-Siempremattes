@@ -104,20 +104,20 @@
 /* Pantallas medianas (por ejemplo, tabletas) */
 @media (max-width: 1024px) {
   .ProductoRnd {
-    width: 250px; /* Reducimos el ancho del producto en pantallas más pequeñas */
-    min-height: 450px; /* Ajustamos la altura para que sea más compacto */
+    width: 230px; /* Reducimos aún más el ancho del producto */
+    min-height: 400px; /* Ajustamos la altura para que sea más compacto */
   }
 
   .ImagenContainer {
-    height: 300px; /* Reducimos la altura de las imágenes */
+    height: 280px; /* Reducimos la altura de las imágenes */
   }
 
   .NombreProductos {
-    font-size: 25px; /* Reducimos el tamaño del texto */
+    font-size: 22px; /* Reducimos el tamaño del texto */
   }
 
   .PrecioProductos {
-    font-size: 35px; /* Reducimos el tamaño del precio */
+    font-size: 30px; /* Reducimos el tamaño del precio */
   }
 
   .btn-detalles {
@@ -129,21 +129,21 @@
 @media (max-width: 768px) {
   .ProductoRnd {
     width: 100%; /* Los productos ocupan todo el ancho de la pantalla */
-    max-width: 320px; /* Aseguramos que el producto no sea más grande que 320px */
-    min-height: 400px; /* Ajustamos la altura de los productos */
+    max-width: 290px; /* Aseguramos que el producto no sea más grande que 290px */
+    min-height: 380px; /* Ajustamos la altura de los productos */
     margin: 0 auto 20px; /* Centramos los productos y los separamos */
   }
 
   .ImagenContainer {
-    height: 250px; /* Reducimos la altura de las imágenes */
+    height: 220px; /* Reducimos la altura de las imágenes */
   }
 
   .NombreProductos {
-    font-size: 22px; /* Ajustamos el tamaño del nombre */
+    font-size: 20px; /* Ajustamos el tamaño del nombre */
   }
 
   .PrecioProductos {
-    font-size: 30px; /* Ajustamos el tamaño del precio */
+    font-size: 28px; /* Ajustamos el tamaño del precio */
   }
 
   .btn-detalles {

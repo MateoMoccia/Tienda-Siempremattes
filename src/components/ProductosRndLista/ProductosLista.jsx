@@ -22,26 +22,28 @@ export const Productos = [
   { id: 17, imagen: "/catalogo-siempremates//img/Mate-torpedo8.jpg", nombre: "Mate torpedo animal print int calabaza y virola de alpaca", precio: "45.000", categoria: "Mates" },
   { id: 18, imagen: "/catalogo-siempremates//img/Mate-imperial-inoxidable.png", nombre: "Mate imperial int. acero inoxidale con virola de acero ", precio: "30.000", categoria: "Mates" },
   { id: 19, imagen: "/catalogo-siempremates//img/Mate-imperial-algarrobo.png", nombre: "Torpedo virola de alpaca cincelada premium", precio: "28.000", categoria: "Mates" },
+  { id: 21, imagen: "/catalogo-siempremates//img/Mate-animalprint.jpg", nombre: "Mate imperial Animal Print interior calabaza virola alpaca", precio: "45.000", categoria: "Mates" },
+
   
 
  
-  { id: 20, imagen: "/catalogo-siempremates//img/bombilla1.png", nombre: "Bombilla pico de loro de acero inox", precio: "5.000", categoria: "Bombillas" },
-  { id: 21, imagen: "/catalogo-siempremates//img/bombilla2.png", nombre: "Bombilla chata de acero inox", precio: "3.500", categoria: "Bombillas" },
-  { id: 22, imagen: "/catalogo-siempremates//img/bombilla3.png", nombre: "Bombillon de alpaca premium", precio: "28.500", categoria: "Bombillas" },
-  { id: 23, imagen: "/catalogo-siempremates//img/bombilla4.png", nombre: "Bombillon de alpaca club de futrbol", precio: "22.000", categoria: "Bombillas" },
-  { id: 24, imagen: "/catalogo-siempremates//img/bombilla5.png", nombre: "Bombillon de alpaca premium con pico de bronce recto. caño labrado con 2 dijes ", precio: "30.000", categoria: "Bombillas" },
+  { id: 22, imagen: "/catalogo-siempremates//img/bombilla1.png", nombre: "Bombilla pico de loro de acero inox", precio: "5.000", categoria: "Bombillas" },
+  { id: 23, imagen: "/catalogo-siempremates//img/bombilla2.png", nombre: "Bombilla chata de acero inox", precio: "3.500", categoria: "Bombillas" },
+  { id: 24, imagen: "/catalogo-siempremates//img/bombilla3.png", nombre: "Bombillon de alpaca premium", precio: "28.500", categoria: "Bombillas" },
+  { id: 25, imagen: "/catalogo-siempremates//img/bombilla4.png", nombre: "Bombillon de alpaca club de futrbol", precio: "22.000", categoria: "Bombillas" },
+  { id: 26, imagen: "/catalogo-siempremates//img/bombilla5.png", nombre: "Bombillon de alpaca premium con pico de bronce recto. caño labrado con 2 dijes ", precio: "30.000", categoria: "Bombillas" },
 
 
-  { id: 25, imagen: "/catalogo-siempremates//img/", nombre: "En proceso...", precio: "", categoria: "Termos" },
+  { id: 27, imagen: "/catalogo-siempremates//img/", nombre: "En proceso...", precio: "", categoria: "Termos" },
 
-  { id: 26, imagen: "/catalogo-siempremates//img/", nombre: "En proceso...", precio: "", categoria: "Yerba" },
+  { id: 28, imagen: "/catalogo-siempremates//img/", nombre: "En proceso...", precio: "", categoria: "Yerba" },
 
-  { id: 27, imagen: "/catalogo-siempremates//img/Matera1.png", nombre: "Matera 100% cuero negra", precio: "40.000", categoria: "Bolsos" },
-  { id: 28, imagen: "/catalogo-siempremates//img/Matera2.png", nombre: "Matera 100% cuero marron claro", precio: "40.000", categoria: "Bolsos" },
-  { id: 29, imagen: "/catalogo-siempremates//img/Matera3.png.jpg", nombre: "Canasta cuerina grande premium reforzada con división", precio: "13.000", categoria: "Bolsos" },
-  { id: 30, imagen: "/catalogo-siempremates//img/Bolso1.jpg", nombre: "Bolso Matero", precio: "15.000", categoria: "Bolsos" },
-  { id: 31, imagen: "/catalogo-siempremates//img/Yerbero1.jpg", nombre: "Yerbero", precio: "5.000", categoria: "Bolsos" },
-  { id: 32, imagen: "/catalogo-siempremates//img/Azucarero1.jpg", nombre: "Azucarero", precio: "5.000", categoria: "Bolsos" },
+  { id: 29, imagen: "/catalogo-siempremates//img/Matera1.png", nombre: "Matera 100% cuero negra", precio: "40.000", categoria: "Bolsos" },
+  { id: 30, imagen: "/catalogo-siempremates//img/Matera2.png", nombre: "Matera 100% cuero marron claro", precio: "40.000", categoria: "Bolsos" },
+  { id: 31, imagen: "/catalogo-siempremates//img/Matera3.png.jpg", nombre: "Canasta cuerina grande premium reforzada con división", precio: "13.000", categoria: "Bolsos" },
+  { id: 32, imagen: "/catalogo-siempremates//img/Bolso1.jpg", nombre: "Bolso Matero", precio: "15.000", categoria: "Bolsos" },
+  { id: 33, imagen: "/catalogo-siempremates//img/Yerbero1.jpg", nombre: "Yerbero", precio: "5.000", categoria: "Bolsos" },
+  { id: 34, imagen: "/catalogo-siempremates//img/Azucarero1.jpg", nombre: "Azucarero", precio: "5.000", categoria: "Bolsos" },
 
 
 
