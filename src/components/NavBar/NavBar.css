@@ -1,19 +1,22 @@
 .HeaderNav {
   display: flex;
-  justify-content: space-between; /* Alinea los elementos a los extremos */
+  justify-content: space-between;
   align-items: center;
-  padding: 10px;
-  background-color: white;
+  padding: 10px 15px; /* Ajuste de padding */
+  background-color: #1C1C1C;
   color: #F2E8DA;
   width: 100%;
-  background-color: #1C1C1C;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
 }
 
 nav {
   display: flex;
   width: 100%;
-  justify-content: space-between; /* Esto asegura que la imagen esté centrada */
-  align-items: center; /* Centra todos los elementos verticalmente */
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%; /* Asegura que no se desborde */
 }
 
 ul {
@@ -23,11 +26,11 @@ ul {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: auto;
+  width: 100%; /* Asegura que ocupe todo el espacio disponible */
 }
 
 li {
-  margin-right: 20px;
+  margin-right: 15px; /* Reducido el margen para que quepa mejor */
   transition: all 0.3s ease;
 }
 
@@ -49,32 +52,25 @@ li a {
   font-family: "Oswald", serif;
   font-weight: 700;
   letter-spacing: 2px;
-  font-size: 20px;
+  font-size: 18px; /* Ajuste del tamaño de fuente */
 }
 
 .select-container {
   display: flex;
   align-items: center;
-  gap: 10px; /* Espacio entre el texto y el select */
+  gap: 10px;
 }
 
 .select-container span {
-  font-size: 20px;
+  font-size: 18px; /* Ajuste del tamaño de fuente */
   font-weight: 700;
   letter-spacing: 1px;
   font-family: "Oswald", serif;
-
-}
-
-.custom-select {
-  display: flex;
-  align-items: center;
-  position: relative;
 }
 
 select {
   padding: 5px 10px;
-  font-size: 16px;
+  font-size: 14px; /* Ajuste de tamaño de la fuente */
   border-radius: 5px;
   border: 1px solid #F2E8DA;
   background-color: #1C1C1C;
@@ -85,63 +81,99 @@ select {
   cursor: pointer;
 }
 
-/* Barra de búsqueda alineada a la derecha */
 .search-bar-container {
   display: flex;
-  justify-content: flex-end; /* Alinea el contenido a la derecha */
-  width: 100%; /* Asegura que el contenedor ocupe todo el ancho disponible */
+  justify-content: flex-end;
+  width: 100%;
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-}
-
-.search-bar input {
-  padding: 5px 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 20px;
-}
-
-.search-bar button {
-  background-color: transparent;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  padding: 5px 10px;
-  transition: all 0.3s ease;
-  margin-right: 20px;
-
-}
-
-.search-bar button:hover {
-  background-color: #1C1C1C;
-  border-color: #1C1C1C;
-  transform: scale(1.05);
-
-}
-
-.search-bar button svg {
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.search-bar button:hover svg {
-  color: white;
-}
-
-/* Estilo de la imagen centrada */
 .navbar-image {
-  width: 80px; /* Tamaño de la imagen */
-  height: 80px; /* Asegura que la imagen sea cuadrada */
-  border-radius: 50%; /* Redondea la imagen */
-  object-fit: cover; /* Asegura que la imagen cubra el área sin deformarse */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de animación */
+  width: 60px; /* Ajuste del tamaño de la imagen */
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar-image:hover {
-  transform: scale(1.1); /* Aumenta el tamaño de la imagen */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Añade una sombra alrededor de la imagen */
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo del botón de hamburguesa */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 15px; /* Ajuste del espacio a la derecha */
+  z-index: 2;
+}
+
+.hamburger-menu .line {
+  width: 25px;
+  height: 3px;
+  background-color: #F2E8DA;
+  border-radius: 5px;
+}
+
+/* Responsividad: mostrar el botón de hamburguesa solo en pantallas pequeñas */
+@media (max-width: 768px) {
+  .HeaderNav {
+    padding: 10px 10px; /* Menos padding para que no sobrepase los bordes */
+  }
+
+  .hamburger-menu {
+    display: flex;  /* Mostramos el botón en pantallas pequeñas */
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: #1C1C1C;
+    z-index: 1;
+    height: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 0 15px; /* Añadido para un poco de espacio lateral */
+    box-sizing: border-box; /* Evitar desbordamientos */
+  }
+
+  .navbar-links.open {
+    display: flex;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+  }
+
+  li {
+    margin-right: 0;
+    margin-bottom: 15px; /* Reducido el margen para que quepa mejor */
+  }
+
+  li:last-child {
+    margin-bottom: 0;
+  }
+
+  .select-container {
+    margin-bottom: 20px; /* Añadido para espacio entre el select y otros elementos */
+  }
 }

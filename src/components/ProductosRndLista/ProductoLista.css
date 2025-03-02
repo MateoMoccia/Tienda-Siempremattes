@@ -1,10 +1,4 @@
-/* .product-list {
-    display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
-    justify-content: center; 
-    padding: 20px;
-} */
+
 
 .productos-grid {
     display: grid;
@@ -13,3 +7,15 @@
     justify-items: center; /* Centra los productos en la columna */
     padding: 20px;
 }
+
+  
+  /* Media Query para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .productos-grid {
+      grid-template-columns: 1fr; /* Cambiar a una sola columna */
+      margin-top: 20px;
+    }
+    
+    /* Aquí puedes añadir más ajustes si es necesario */
+  }
+  

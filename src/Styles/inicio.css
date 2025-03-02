@@ -14,7 +14,7 @@
     transition: all 0.3s ease;
 }
 
-h5{
+h5 {
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
     font-weight: 600;
@@ -39,7 +39,7 @@ h2:hover {
     border-color: whitesmoke; 
     transform: translateY(-5px); 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
-  }
+}
 
 .container>* {
     border-radius: 10px;
@@ -62,7 +62,6 @@ h2:hover {
     padding: 50px;
     gap: 50px;
     background-color: rgb(248, 241, 241);
-
     color: black;
     font-family: Arial, sans-serif;
     text-align: center;
@@ -90,8 +89,6 @@ h2:hover {
     padding: 20px;
     border: 1px solid #ddd;
     background-color: white;
-
-
 }
 
 .icon {
@@ -105,7 +102,6 @@ h2:hover {
     font-size: 28px;
     margin: 0 auto 15px auto;
     color: black;
-    /* Asegura que los iconos sean visibles */
 }
 
 .title {
@@ -133,7 +129,6 @@ h2:hover {
     border-radius: 15px;
     border: 3px solid #1C1C1C;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-   
 }
 
 .gracias {
@@ -143,8 +138,6 @@ h2:hover {
     font-style: normal;
     font-size: 70px;
     margin-left: 300px;
-
-
 }
 
 .instagramMensaje {
@@ -157,9 +150,9 @@ h2:hover {
 }
 
 .LinkInstagram {
-    display: inline-block; /* Se ajusta al tamaño del texto */
+    display: inline-block; 
     border: 2px solid #1C1C1C;
-    padding: 8px 15px; /* Ajuste fino del espacio interno */
+    padding: 8px 15px; 
     border-radius: 10px;
     background-color: white;
     text-decoration: none;
@@ -183,13 +176,11 @@ h2:hover {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
 }
 
-
 .social-icons {
     display: flex;
     gap: 15px;
     align-items: center;
     justify-content: center;
-    /* Centra los elementos horizontalmente */
 }
 
 .icon {
@@ -221,4 +212,146 @@ h2:hover {
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 40px 30px;
+        gap: 30px;
+    }
+
+    h5 {
+        font-size: 30px;
+        width: 90%;
+    }
+
+    .container-2, .container-3 {
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .item {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .gracias {
+        font-size: 50px;
+        margin-left: 0;
+    }
+
+    .graciasInstagram img {
+        width: 50%;
+    }
+
+    .LinkInstagram {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .productos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajustes en los contenedores de productos */
+    .container-2, .container-3 {
+        gap: 20px;
+    }
+
+    .item {
+        width: 100%;
+        max-width: 300px; /* Limita el ancho de los items */
+    }
+
+    /* Acomodo de la imagen, link y texto en la sección de Gracias Instagram */
+    .graciasInstagram {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .graciasInstagram img {
+        width: 80%; /* Ajusta el tamaño de la imagen */
+    }
+
+    .gracias {
+        font-size: 40px;
+        margin-left: 0;
+    }
+
+    .instagramMensaje {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .LinkInstagram {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+}
+
+/* Media Queries para pantallas muy pequeñas (como móviles) */
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    h5 {
+        font-size: 25px;
+        width: 100%;
+    }
+
+    .container-2, .container-3 {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .item {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .gracias {
+        font-size: 40px;
+        margin-left: 0;
+    }
+
+    .graciasInstagram img {
+        width: 90%;
+    }
+
+    .LinkInstagram {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .social-icons {
+        flex-wrap: wrap;
+    }
+
+    .productos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajustes adicionales en la sección de Gracias Instagram */
+    .graciasInstagram {
+        gap: 20px;
+    }
+
+    .graciasInstagram img {
+        width: 90%;
+    }
+
+    .gracias {
+        font-size: 35px;
+        margin-left: 0;
+    }
+
+    .instagramMensaje {
+        font-size: 14px;
+    }
 }
