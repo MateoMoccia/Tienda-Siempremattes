@@ -14,7 +14,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 
 const App = () => {
   return (
-    <Router  basename="/catalogo-siempremates">
+    <Router>
       <NavBar />
       <Routes>
         <Route path="/" element={<Inicio />} />
