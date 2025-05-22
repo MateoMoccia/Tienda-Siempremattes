@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "catalogo-siempremates": "file:",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.4.7",
     "react": "^19.0.0",
