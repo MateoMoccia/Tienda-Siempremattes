@@ -77,7 +77,7 @@ const NavBar = () => {
         </ul>
 
         <img 
-          src="/catalogo-siempremates//img/logo-siempremates.jpg"
+          src="/img/logo-siempremates.jpg"
           alt="Logo siempremates"
           className="navbar-image"
         />
