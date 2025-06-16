@@ -10,6 +10,11 @@
     opacity: 0; 
     animation: fadeIn 1s ease-out forwards; 
     transition: all 0.3s ease; 
+      display: flex;              /* Para alinear hijos en fila */
+    align-items: center;        /* Centrar verticalmente */
+    justify-content: center;    /* Centrar horizontalmente (opcional) */
+    gap: 15px;                  /* Espacio entre texto e imagen */
+}
 }
 
 .GrabadoDeMates {
@@ -19,6 +24,8 @@
     font-style: normal;
     text-align: center;
     font-size: 20px;
+       text-align: left;           /* Cambié a left para que se alinee al inicio */
+    flex-shrink: 0;    
 }
 
 .ImagenGrabados{
@@ -26,4 +33,12 @@
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  width: 30%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    border: 3px solid #1C1C1C;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        flex-shrink: 0;             /* Evita que la imagen se achique */
+
 }
