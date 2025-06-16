@@ -33,4 +33,5 @@
     display: block;
     border: 3px solid #1C1C1C;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box; 
 }
