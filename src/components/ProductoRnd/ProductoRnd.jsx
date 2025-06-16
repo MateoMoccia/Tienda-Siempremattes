@@ -1,8 +1,9 @@
-import React from 'react';
+// import React from 'react';
+import PropTypes from 'prop-types';
 import './ProductoRnd.css';
 import { Link } from 'react-router-dom';
 
-const ProductoRnd = ({ id, imagen, nombre, precio, descripcion, sinExtras }) => {
+const ProductoRnd = ({ docId, imagen, nombre, precio , sinExtras }) => {
   return (
     <div className='ProductosContainer'>
       <div className='ProductoRnd'>
@@ -12,7 +13,7 @@ const ProductoRnd = ({ id, imagen, nombre, precio, descripcion, sinExtras }) => 
         <h3 className='NombreProductos'>{nombre}</h3>
         {!sinExtras && <p className='PrecioProductos'>{precio}$</p>}
         {!sinExtras && (
-          <Link to={`/detalle/${id}`} className='btn-detalles'>
+          <Link to={`/detalle/${docId}`} className='btn-detalles'>
             <p>Ver detalles</p>
           </Link>
         )}
@@ -21,4 +22,13 @@ const ProductoRnd = ({ id, imagen, nombre, precio, descripcion, sinExtras }) => 
   );
 };
 
+ProductoRnd.propTypes = {
+  docId: PropTypes.string.isRequired,
+  id: PropTypes.string,
+  imagen: PropTypes.string,
+  nombre: PropTypes.string,
+  precio: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  descripcion: PropTypes.string,
+  sinExtras: PropTypes.bool
+};
 export default ProductoRnd;

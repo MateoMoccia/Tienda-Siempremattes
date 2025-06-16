@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import ProductoRnd from '../ProductoRnd/ProductoRnd';
 import { collection, getDocs } from 'firebase/firestore';
-import { db } from '../../firebase'; // Ajustá la ruta si hace falta
+import { db } from '../../firebase';
 import './ProductoLista.css';
 
 const ProductosLista = ({ categoria }) => {
@@ -13,8 +14,8 @@ const ProductosLista = ({ categoria }) => {
       const productosCol = collection(db, 'productos');
       const productosSnapshot = await getDocs(productosCol);
       const productosList = productosSnapshot.docs.map(doc => ({
-        id: doc.id, // id generado por firestore
-        ...doc.data()
+        docId: doc.id, // ✅ ID generado por Firebase
+        ...doc.data() // 👈 Incluye el campo "id" interno si lo tenés en el documento
       }));
       setProductos(productosList);
       setLoading(false);
@@ -23,7 +24,6 @@ const ProductosLista = ({ categoria }) => {
     fetchProductos();
   }, []);
 
-  // Filtrás productos por categoría (igual que antes)
   const productosFiltrados = productos.filter(producto => producto.categoria === categoria);
 
   if (loading) return <p>Cargando productos...</p>;
@@ -33,8 +33,9 @@ const ProductosLista = ({ categoria }) => {
       {productosFiltrados.length > 0 ? (
         productosFiltrados.map(producto => (
           <ProductoRnd
-            key={producto.id}
-            id={producto.id}
+            key={producto.docId}
+            docId={producto.docId} // 👈 Se usa para navegar
+            id={producto.id}       // 👈 Este sigue existiendo y se puede mostrar
             imagen={producto.imagen}
             nombre={producto.nombre}
             precio={producto.precio}
@@ -48,5 +49,8 @@ const ProductosLista = ({ categoria }) => {
     </div>
   );
 };
+ProductosLista.propTypes = {
+    categoria: PropTypes.string,
+}
 
 export default ProductosLista;

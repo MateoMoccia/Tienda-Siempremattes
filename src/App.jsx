@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
@@ -10,6 +10,7 @@ import Termos from './pages/Termos';
 import Yerba from './pages/Yerba';
 import Bolsos from './pages/Bolsos';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+import SubirProductos from './SubirProductos';
 
 
 
@@ -17,7 +18,7 @@ const App = () => {
   return (
     <>
 
-
+      <SubirProductos />
       <Router>
         <NavBar />
         <Routes>

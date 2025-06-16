@@ -1,27 +1,44 @@
-// import { useEffect } from 'react';
-// import { collection, addDoc } from 'firebase/firestore';
-// import { db } from './firebase'; // ajustá según tu ruta
-// import { productos } from './data/productos'; // este es tu array hardcodeado
+import { useEffect } from 'react';
+import { doc, setDoc } from 'firebase/firestore';
+import { db } from './firebase';
+import { productos } from './data/productos';
 
-// const SubirProductos = () => {
-//   useEffect(() => {
-//     const subirProductos = async () => {
-//       const productosCollection = collection(db, 'productos');
+const SubirProductos = () => {
+  useEffect(() => {
+    const subirProductos = async () => {
+      if (!db) {
+        console.error('Firestore "db" no está definido');
+        return;
+      }
 
-//       for (const producto of productos) {
-//         try {
-//           await addDoc(productosCollection, producto);
-//           console.log('Producto subido:', producto.nombre);
-//         } catch (error) {
-//           console.error('Error al subir:', producto.nombre, error);
-//         }
-//       }
-//     };
+      if (!productos || productos.length === 0) {
+        console.error('El array productos está vacío o no definido.');
+        return;
+      }
 
-//     subirProductos();
-//   }, []);
+      console.log('Subiendo productos, cantidad:', productos.length);
 
-//   return <p>Subiendo productos a Firestore...</p>;
-// };
+      for (const producto of productos) {
+        if (!producto.id) {
+          console.error('Producto sin id:', producto);
+          continue;
+        }
 
-// export default SubirProductos;
+        try {
+          console.log('Subiendo:', producto.nombre, 'ID:', producto.id);
+          const docRef = doc(db, 'productos', producto.id.toString());
+          await setDoc(docRef, producto);
+          console.log('Producto subido:', producto.nombre);
+        } catch (error) {
+          console.error('Error al subir:', producto.nombre, error);
+        }
+      }
+    };
+
+    subirProductos();
+  }, []);
+
+  return <p>Subiendo productos a Firestore...</p>;
+};
+
+export default SubirProductos;

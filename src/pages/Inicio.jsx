@@ -43,7 +43,7 @@ const Inicio = () => {
           <div className='textoContainer'>
             <p className='gracias'>Gracias por elegirnos</p>
             <p className='instagramMensaje'>No te olvides de publicar una foto con tu producto etiquetandonos para conseguir un 10% off en tu próxima compra!</p>
-            <a href="https://www.instagram.com/siempre.mates__/" className='LinkInstagram' target="_blank">Nuestro Instagram</a>
+            <a href="https://www.instagram.com/siempremattes/" className='LinkInstagram' target="_blank">Nuestro Instagram</a>
           </div>
 
         </div>
@@ -56,14 +56,14 @@ const Inicio = () => {
           <img src="/img/imagen-master-card.png" alt="imagen master card" />
           <h3>Nuestras Redes Sociales</h3>
           <div className="social-icons">
-            <a href="https://www.instagram.com/siempre.mates__/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/siempremattes/" target="_blank" rel="noopener noreferrer">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png"
                 alt="Instagram"
                 className="icon"
               />
             </a>
-            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer">
+            <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
                 alt="WhatsApp"
