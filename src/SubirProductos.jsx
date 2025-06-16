@@ -38,7 +38,7 @@ const SubirProductos = () => {
     subirProductos();
   }, []);
 
-  return <p>Subiendo productos a Firestore...</p>;
+  // return <p>Subiendo productos a Firestore...</p>;
 };
 
 export default SubirProductos;
