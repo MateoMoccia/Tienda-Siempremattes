@@ -62,7 +62,7 @@ const Inicio = () => {
                 className="icon"
               />
             </a>
-            <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer">
+            <a href="http://wa.me/5491123939608" target="_blank" rel="noopener noreferrer">
               <img
                 src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
                 alt="WhatsApp"
