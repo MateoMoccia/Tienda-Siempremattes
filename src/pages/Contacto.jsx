@@ -6,12 +6,12 @@ const Contacto = () => {
     <div className="contacto-container">
       <h1 className="contacto-title">Contacto</h1>
       <div className="contacto-info">
-        <p><strong>Dirección:</strong> (Se arregla con el vendedor)</p>
+        <p><strong>Dirección:</strong> Villa Ballester, Buenos Aires</p>
         <p><strong>Teléfono:</strong> +54 11-2393-9608</p>
-        <p><strong>Correo Electrónico:</strong> francoracing@gmail.com</p>
+        <p><strong>Correo Electrónico:</strong> siempremattes@gmail.com</p>
       </div>
       <div className="contacto-no-form">
-        <p>Si deseas ponerte en contacto, por favor envíanos un correo a <strong>francoracing@gmail.com</strong> o llámanos al número proporcionado.</p>
+        <p>Si deseas ponerte en contacto, por favor envíanos un correo a <strong>siempremattes@gmail.com</strong> o llámanos al número proporcionado.</p>
       </div>
     </div>
   );

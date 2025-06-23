@@ -60,7 +60,7 @@ const NavBar = () => {
           <li><Link to="/" onClick={closeMenu}>Inicio</Link></li>
           <li><Link to="/contacto" onClick={closeMenu}>Contacto</Link></li>
           <li className="select-container">
-            <span onClick={closeMenu}>Seleccionar</span> {/* Cierra el menú al hacer clic en "Seleccionar" */}
+            <span onClick={closeMenu}>Productos</span> {/* Cierra el menú al hacer clic en "Productos" */}
             <select 
               value={producto} 
               onChange={handleSelectChange} 

@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, getDoc } from 'firebase/firestore'; // <-- 🟢 Agregamos getDoc para consultar si ya existe el producto
 import { db } from './firebase';
 import { productos } from './data/productos';
 
@@ -25,10 +25,15 @@ const SubirProductos = () => {
         }
 
         try {
-          console.log('Subiendo:', producto.nombre, 'ID:', producto.id);
           const docRef = doc(db, 'productos', producto.id.toString());
-          await setDoc(docRef, producto);
-          console.log('Producto subido:', producto.nombre);
+          const docSnap = await getDoc(docRef); // <-- 🟢 Acá consultamos si ya existe el producto en Firestore
+
+          if (!docSnap.exists()) { // <-- 🟢 Solo subimos el producto si no existe
+            await setDoc(docRef, producto);
+            console.log('Producto subido:', producto.nombre);
+          } else {
+            console.log('Producto ya existe, no se sobrescribe:', producto.nombre); // <-- 🟢 Si ya existe, se mantiene intacto
+          }
         } catch (error) {
           console.error('Error al subir:', producto.nombre, error);
         }
@@ -38,7 +43,7 @@ const SubirProductos = () => {
     subirProductos();
   }, []);
 
-  return 
+  return null;
 };
 
 export default SubirProductos;

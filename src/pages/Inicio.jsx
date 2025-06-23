@@ -49,7 +49,7 @@ const Inicio = () => {
         </div>
         <footer className='contenedor-final'>
           <h3>Contacto</h3>
-          <p>francoracing@gmail.com / 11-2393-9608 </p>
+          <p>siempremattes@gmail.com/ 11-2393-9608 </p>
           <h3> Métodos de pago</h3>
           <img src="/img/imagen-visa.png" alt="imagen visa" />
           <img src="/img/imagen-mercado-pago.jpg" alt="imagen mercado pago" />
