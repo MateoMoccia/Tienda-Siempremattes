@@ -42,7 +42,6 @@ const Inicio = () => {
           <img src="/img/imagensiempremates.jpg" alt="Imagensiempremates" />
           <div className='textoContainer'>
             <p className='gracias'>Gracias por elegirnos</p>
-            <p className='instagramMensaje'>No te olvides de publicar una foto con tu producto etiquetandonos para conseguir un 10% off en tu próxima compra!</p>
             <a href="https://www.instagram.com/siempremattes/" className='LinkInstagram' target="_blank">Nuestro Instagram</a>
           </div>
 
