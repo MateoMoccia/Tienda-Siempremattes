@@ -1,0 +1,85 @@
+
+.checkout-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    margin-top: 40px;
+  }
+  
+  .checkout-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .checkout-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+    font-family: "Montserrat", serif;
+    font-weight: 30px;
+  }
+  
+  .checkout-container input[type="text"],
+  .checkout-container input[type="email"],
+  .checkout-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  .checkout-container input[disabled] {
+    background-color: #e0e0e0;
+    cursor: not-allowed;
+  }
+  
+  .checkout-container button {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .checkout-container button:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .Toastify__toast-container {
+    position: fixed;
+    top: 80%; 
+    right: 20px; 
+    transform: translateY(-50%); 
+    z-index: 9999; 
+  }
+  
+  
+  .Toastify__toast--success {
+    background-color: green; 
+    color: white;
+    font-family: "Oswald", serif;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 5px;
+  }
+  
+  .Toastify__toast--error {
+    background-color: red; 
+    color: white;
+    font-family: "Oswald", serif;
+    font-size: 16px;
+    padding: 12px;
+    border-radius: 5px;
+  }

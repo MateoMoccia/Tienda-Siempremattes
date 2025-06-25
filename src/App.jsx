@@ -11,13 +11,16 @@ import Yerba from './pages/Yerba';
 import Bolsos from './pages/Bolsos';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import SubirProductos from './SubirProductos';
+import CarritoProvider from './Context/CarritoContext';  
+import Checkout from './components/Checkout/Checkout';
+
 
 
 
 const App = () => {
   return (
     <>
-
+ <CarritoProvider>
       <SubirProductos />
       <Router>
         <NavBar />
@@ -30,8 +33,10 @@ const App = () => {
           <Route path="/yerba" element={<Yerba />} />
           <Route path="/bolsos" element={<Bolsos />} />
           <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+          <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Router>
+      </CarritoProvider>
     </>
   );
 };

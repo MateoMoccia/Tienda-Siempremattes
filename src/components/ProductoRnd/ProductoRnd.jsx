@@ -2,8 +2,10 @@
 import PropTypes from 'prop-types';
 import './ProductoRnd.css';
 import { Link } from 'react-router-dom';
+import ItemCounter from '../ItemCounter/ItemCounter';
 
-const ProductoRnd = ({ docId, imagen, nombre, precio , sinExtras }) => {
+const ProductoRnd = ({ docId, imagen, nombre, precio ,agregarAlCarrito, sinExtras }) => {
+  const producto = { docId, imagen, nombre, precio }; 
   return (
     <div className='ProductosContainer'>
       <div className='ProductoRnd'>
@@ -12,6 +14,7 @@ const ProductoRnd = ({ docId, imagen, nombre, precio , sinExtras }) => {
         </div>
         <h3 className='NombreProductos'>{nombre}</h3>
         {!sinExtras && <p className='PrecioProductos'>{precio}$</p>}
+                {!sinExtras && <ItemCounter producto={producto} agregarAlCarrito={agregarAlCarrito} />}
         {!sinExtras && (
           <Link to={`/detalle/${docId}`} className='btn-detalles'>
             <p>Ver detalles</p>

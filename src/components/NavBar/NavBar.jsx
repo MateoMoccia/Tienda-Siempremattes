@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './NavBar.css';
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
+import CartWidget from '../CartWidget/CartWidget';
+import { CarritoContext } from '../../Context/CarritoContext';
+
 
 const NavBar = () => {
   const [producto, setProducto] = useState(""); 
@@ -9,6 +11,8 @@ const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false); // Estado para controlar el menú
   const navigate = useNavigate();
   const location = useLocation(); // Hook para obtener la ubicación actual
+    const { cantidadEnCarrito } = useContext(CarritoContext);  // Obtener la cantidad del carrito desde el contexto
+
 
   const handleSearch = () => {
     console.log("Buscando:", search);
@@ -90,9 +94,8 @@ const NavBar = () => {
         </button>
       </nav>
 
-      {/* Barra de búsqueda */}
-      <div className="search-bar-container">
-        {/* Barra de búsqueda si es necesario */}
+      <div >
+      <CartWidget cantidadProductos={cantidadEnCarrito} />  {/* Pasar la cantidad actual al CartWidget */}
       </div>
     </header>
   );

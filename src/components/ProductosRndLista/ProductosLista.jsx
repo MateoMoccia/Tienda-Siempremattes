@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext  } from 'react';
 import PropTypes from 'prop-types';
 import ProductoRnd from '../ProductoRnd/ProductoRnd';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase';
 import './ProductoLista.css';
-
+import { CarritoContext } from '../../Context/CarritoContext';
 const ProductosLista = ({ categoria }) => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
+    const { agregarAlCarrito } = useContext(CarritoContext);
 
   useEffect(() => {
     async function fetchProductos() {
@@ -40,6 +41,7 @@ const ProductosLista = ({ categoria }) => {
             nombre={producto.nombre}
             precio={producto.precio}
             descripcion={producto.descripcion}
+            agregarAlCarrito={agregarAlCarrito}
             sinExtras={false}
           />
         ))
