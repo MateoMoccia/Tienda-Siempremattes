@@ -7,6 +7,7 @@
   width: 40px;
   cursor: pointer;
   transition: transform 0.3s ease;
+  
 }
 
 .Carrito-boton:hover {
@@ -56,12 +57,16 @@
   box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   overflow-y: auto;
+  
 }
 
 .carrito-sidebar-content {
+  display: left;
+  flex-direction: column;
+  gap: 16px;
   padding: 20px;
-    color: #1C1C1C;
-
+  color: #1C1C1C;
+  max-width: 90%;
 }
 
 .carrito-item {
@@ -82,34 +87,63 @@
   margin-top: 20px;
   font-weight: bold;
   color: #1C1C1C;
+      font-family: "Montserrat", sans-serif;
 }
 
 
 .carrito-buttons {
-  display: flex; 
-  justify-content: center; 
-  gap: 10px; 
-  margin-top: 20px; 
-  padding: 0 20px; 
-  width: 100%; 
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 0 20px;         /* Separa los bordes del contenedor */
+  width: 100%;
+  box-sizing: border-box;  /* Incluye padding en el ancho */
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Estilo común para los botones */
 .carrito-buttons button {
-  border: 2px solid #000; 
-  background-color: white; 
-  color: black; 
-  padding: 10px 20px; 
-  border-radius: 5px; 
-  padding: 12px 20px; 
-  font-size: 16px; 
-  cursor: pointer; 
-  transition: background-color 0.3s ease; 
-  width: calc(100% - 40px);}
+  border: 2px solid #000;
+  background-color: white;
+  color: black;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  box-sizing: border-box;
+  flex: 1;                 /* Ocupa el mismo ancho posible sin romper diseño */
+  min-width: 120px;        /* Evita que se achiquen demasiado */
+}
+
+
+
 
 
 .carrito-buttons button:hover {
   background-color: black;
   color: white; 
+}
+
+.No-tienes {
+    font-family: "Montserrat", sans-serif;
+}
+
+.titulo-carrito {
+  display: block;       /* De inline-block a block */
+  padding: 8px 12px;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+    margin-top: -10px;    /* Esto sube el título 10px respecto al flujo normal */
+  margin-bottom: 10px;
+
+  width: fit-content;   /* Mantiene tamaño al contenido */
+  margin-left: auto;    /* Centra horizontalmente */
+  margin-right: auto;   /* Centra horizontalmente */
 }
 

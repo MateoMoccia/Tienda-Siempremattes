@@ -28,7 +28,7 @@ const Checkout = () => {
   return (
     <>
       <div className="checkout-container">
-        <h2>Finalizar Compra</h2>
+        <h5>Finalizar Compra</h5>
         <form onSubmit={handleSubmit}>
           <label>
             Nombre y Apellido:
@@ -40,19 +40,20 @@ const Checkout = () => {
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </label>
 
-          <label>
+          <label >
             Método de Pago:
-            <select value={metodoPago} onChange={(e) => setMetodoPago(e.target.value)} required>
+            <select className='metodo-de-pago' value={metodoPago} onChange={(e) => setMetodoPago(e.target.value)} required>
               <option value=""></option>
-              <option value="Tarjeta de Crédito">Mastercard</option>
+              <option value="Tarjeta de Crédito">Credito/Debito/Efectivo</option>
               <option value="PayPal">Mercado Pago</option>
-              <option value="Transferencia Bancaria">Visa</option>
+              {/* Agregar link para despues llevarlo a mercado pago */}
             </select>
           </label>
 
           <label>
-            Información de Pago:
-            <input type="text" value={infoPago} onChange={(e) => setInfoPago(e.target.value)} required disabled={!metodoPago} />
+            Información de la compra:
+            {/* PONER LA INFORMACION DE QUE ES LO QUE VA A COMPRAR,PRODUCTOS,ETC */}
+            <input type="text" />
           </label>
 
           <button type="submit">Confirmar Compra</button>

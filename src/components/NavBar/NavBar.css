@@ -1,44 +1,45 @@
 .HeaderNav {
+  position: relative; /* Para posicionar el logo absolute */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px; /* Ajuste de padding */
+  padding: 17px 15px; 
   background-color: #1C1C1C;
   color: #F2E8DA;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  box-sizing: border-box; /* Asegura que el padding no aumente el ancho total */
+  width: 100vw; /* ancho viewport total, no solo 100% */
+    max-width: 100vw;
+  box-sizing: border-box;
+  z-index: 100;
+  overflow-x: hidden; /* Evita scroll horizontal */
 }
 
 nav {
   display: flex;
-  width: 100%;
-  justify-content: space-between;
   align-items: center;
-  max-width: 100%; /* Asegura que no se desborde */
+  flex: 1; /* Ocupa espacio entre carrito y header */
+  position: relative;
 }
 
-ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+/* Botones navegación a la izquierda */
+.navbar-links {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 100%; /* Asegura que ocupe todo el espacio disponible */
+  padding-left: 15px;
+  max-width: 33%;
+  box-sizing: border-box;
+  margin: 0;
+  list-style: none;
 }
 
 li {
-  margin-right: 15px; /* Reducido el margen para que quepa mejor */
-  transition: all 0.3s ease;
+  margin-right: 15px;
+  transition: color 0.5s ease, background-color 0.5s ease, transform 0.5s ease;
 }
 
 li:hover {
-  margin: 0 10px;
-  background-color: #1C1C1C;
+  background-color: #2a2a2a;
   color: #F2E8DA;
-  text-decoration: none;
   font-weight: bold;
   padding: 5px 10px;
   border-radius: 5px;
@@ -52,17 +53,18 @@ li a {
   font-family: "Oswald", serif;
   font-weight: 700;
   letter-spacing: 2px;
-  font-size: 18px; /* Ajuste del tamaño de fuente */
+  font-size: 18px;
 }
 
 .select-container {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin: 0;
 }
 
 .select-container span {
-  font-size: 18px; /* Ajuste del tamaño de fuente */
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 1px;
   font-family: "Oswald", serif;
@@ -70,7 +72,7 @@ li a {
 
 select {
   padding: 5px 10px;
-  font-size: 14px; /* Ajuste de tamaño de la fuente */
+  font-size: 14px;
   border-radius: 5px;
   border: 1px solid #F2E8DA;
   background-color: #1C1C1C;
@@ -81,26 +83,49 @@ select {
   cursor: pointer;
 }
 
-.search-bar-container {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
-}
-
+/* Logo centrado absoluto */
 .navbar-image {
-  width: 60px; /* Ajuste del tamaño de la imagen */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+  max-width: 60px;
+  z-index: 20; /* debajo del carrito y hamburguesa */
 }
 
 .navbar-image:hover {
-  transform: scale(1.1);
+  transform: translate(-50%, -50%) scale(1.1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Estilo del botón de hamburguesa */
+/* Contenedor carrito a la derecha en desktop */
+.HeaderNav > div {
+  padding-right: 15px;
+  flex-shrink: 0;
+  min-width: 50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: none !important;
+  border: none !important;
+  background: none !important;
+  z-index: 30;
+}
+
+/* Quitamos efecto hover con sombra en carrito */
+.HeaderNav > div:hover {
+  box-shadow: none !important;
+  background: none !important;
+}
+
+/* Botón hamburguesa */
+/* Botón hamburguesa */
 .hamburger-menu {
   display: none;
   flex-direction: column;
@@ -108,72 +133,117 @@ select {
   align-items: center;
   width: 30px;
   height: 25px;
-  background: transparent;
   border: none;
   cursor: pointer;
-  position: absolute;
-  right: 15px; /* Ajuste del espacio a la derecha */
-  z-index: 2;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  z-index: 1100;
 }
 
 .hamburger-menu .line {
-  width: 25px;
+  width: 100%;
   height: 3px;
   background-color: #F2E8DA;
-  border-radius: 5px;
+  border-radius: 2px;
+  box-shadow: 0 0 3px rgba(242, 232, 218, 0.9);
+  margin: 2px 0;
 }
 
-/* Responsividad: mostrar el botón de hamburguesa solo en pantallas pequeñas */
+/* RESPONSIVE - MÓVILES */
 @media (max-width: 768px) {
+
   .HeaderNav {
-    padding: 10px 10px; /* Menos padding para que no sobrepase los bordes */
+    height: 60px;
   }
 
+  nav {
+    height: 100%;
+    justify-content: center;
+  }
+
+  /* Mostrar botón hamburguesa */
   .hamburger-menu {
-    display: flex;  /* Mostramos el botón en pantallas pequeñas */
+    display: flex !important;
+
+    /* Posición fija a la derecha con margen y centrado vertical */
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 
+  /* Carrito fijo a la izquierda con margen y centrado vertical */
+  .HeaderNav > div {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none !important;
+    border: none !important;
+    background: none !important;
+    z-index: 1100;
+  }
+
+  /* Menú lateral desplegable desde la derecha */
   .navbar-links {
+    position: fixed;
+    top: 60px; /* justo debajo de la navbar fija */
+    right: 0;
+    width: 60vw;
+    max-width: 320px;
+    height: calc(100vh - 60px);
+    background-color: #1C1C1C;
+    box-shadow: -3px 0 6px rgba(0,0,0,0.5);
     display: none;
     flex-direction: column;
-    width: 100%;
-    text-align: center;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background-color: #1C1C1C;
-    z-index: 1;
-    height: auto;
-    max-height: 80vh;
+    padding: 20px;
     overflow-y: auto;
-    padding: 0 15px; /* Añadido para un poco de espacio lateral */
-    box-sizing: border-box; /* Evitar desbordamientos */
+    box-sizing: border-box;
+    border-radius: 0 0 0 10px;
+    z-index: 1200;
   }
 
   .navbar-links.open {
     display: flex;
   }
 
-  ul {
-    display: flex;
-    flex-direction: column;
+  .navbar-links li {
+    margin: 15px 0;
     width: 100%;
-    padding: 0;
-    margin: 0;
-    align-items: center;
+    text-align: left;
   }
 
-  li {
-    margin-right: 0;
-    margin-bottom: 15px; /* Reducido el margen para que quepa mejor */
-  }
-
-  li:last-child {
-    margin-bottom: 0;
+  .navbar-links li a,
+  .navbar-links .select-container span,
+  .navbar-links select {
+    width: 100%;
+    display: block;
   }
 
   .select-container {
-    margin-bottom: 20px; /* Añadido para espacio entre el select y otros elementos */
+    margin-bottom: 15px;
+    width: 100%;
   }
+
+  /* Logo centrado absoluto para móviles */
+  .navbar-image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 1100;
+  }
+}
+
+/* Para evitar que el contenido quede debajo de la navbar fija */
+main {
+  padding-top: 60px;
 }

@@ -11,10 +11,10 @@ const CarritoSidebar = () => {
 
   return (
     <div className="carrito-sidebar-content">
-      <h3>Mi carrito</h3>
+<h6 className="titulo-carrito">Mi carrito</h6>
       <ul>
         {productosEnCarrito.length === 0 ? (
-          <li>No tienes productos en el carrito</li>
+          <li className='No-tienes'>No tienes productos en el carrito</li>
         ) : (
           productosEnCarrito.map((producto, index) => (
             <li key={index} className="carrito-item">
