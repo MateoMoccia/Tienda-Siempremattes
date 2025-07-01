@@ -69,6 +69,13 @@ const Inicio = () => {
                 className="icon"
               />
             </a>
+            <a href="https://www.tiktok.com/@siempremattes" target="_blank" rel="noopener noreferrer">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png"
+                alt="TikTok"
+                className="icon"
+              />
+            </a>
           </div>
         </footer>
       </div>

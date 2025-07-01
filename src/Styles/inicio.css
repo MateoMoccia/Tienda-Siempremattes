@@ -221,10 +221,7 @@ h2:hover {
         gap: 30px;
     }
 
-    h5 {
-        font-size: 30px;
-        width: 90%;
-    }
+ 
 
     .container-2, .container-3 {
         padding: 30px;
@@ -299,10 +296,7 @@ h2:hover {
         gap: 20px;
     }
 
-    h5 {
-        font-size: 25px;
-        width: 100%;
-    }
+
 
     .container-2, .container-3 {
         padding: 20px;
@@ -354,4 +348,33 @@ h2:hover {
     .instagramMensaje {
         font-size: 14px;
     }
+}
+
+@media (max-width: 1024px) {
+  h5 {
+    font-size: 38px;
+    width: 75%;
+    padding: 14px;
+    margin: 18px auto;
+  }
+}
+
+/* Tablets pequeños / phablets: hasta 768px */
+@media (max-width: 768px) {
+  h5 {
+    font-size: 32px;
+    width: 85%;
+    padding: 12px;
+    margin: 16px auto;
+  }
+}
+
+/* Celulares: hasta 480px */
+@media (max-width: 480px) {
+  h5 {
+    font-size: 28px;
+    width: 90%;
+    padding: 10px;
+    margin: 15px auto;
+  }
 }

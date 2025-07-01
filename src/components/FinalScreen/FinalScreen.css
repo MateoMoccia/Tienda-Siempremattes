@@ -1,0 +1,52 @@
+.link-con-texto {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  margin-bottom: 30px; 
+    font-size: 16px;
+  word-break: break-word;
+  white-space: nowrap; /* evita que el icono y texto se separen */
+}
+
+.link-con-texto:hover {
+  text-decoration: none;
+}
+
+.container-grabado-mates {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+
+.texto-arriba {
+  margin-bottom: 20px;
+}
+
+/* Media Queries */
+
+/* Hasta 1024px */
+@media (max-width: 1024px) {
+  .link-con-texto {
+    font-size: 15px;
+    gap: 7px;
+  }
+}
+
+/* Hasta 768px */
+@media (max-width: 768px) {
+  .link-con-texto {
+    font-size: 14px;
+    gap: 6px;
+  }
+}
+
+/* Hasta 480px (móviles) */
+@media (max-width: 480px) {
+  .link-con-texto {
+    font-size: 13px;
+    gap: 6px;
+    white-space: normal; /* permite que el texto haga wrap */
+  }
+}

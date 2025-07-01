@@ -13,6 +13,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import SubirProductos from './SubirProductos';
 import CarritoProvider from './Context/CarritoContext';  
 import Checkout from './components/Checkout/Checkout';
+import FinalScreen from './components/FinalScreen/FinalScreen'
+
 
 
 
@@ -34,6 +36,7 @@ const App = () => {
           <Route path="/bolsos" element={<Bolsos />} />
           <Route path="/detalle/:id" element={<ItemDetailContainer />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/final" element={<FinalScreen />} />
         </Routes>
       </Router>
       </CarritoProvider>
