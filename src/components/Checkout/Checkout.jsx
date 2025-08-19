@@ -29,8 +29,8 @@ const payer = {
 
 const itemsMercadoPago = productosEnCarrito.map((producto) => ({
   title: String(producto.nombre),
-  unit_price: Number(producto.precio), // asegurarse que sea number
-  quantity: Number(producto.cantidad)   // asegurarse que sea number
+  unit_price: Number(String(producto.precio).replace(/\./g, "")), 
+    quantity: Number(producto.cantidad)   // asegurarse que sea number
 }));
 
 const redirigirMercadoPago = async () => {
@@ -39,12 +39,12 @@ const redirigirMercadoPago = async () => {
     console.log("Enviando datos a /crear-preferencia:", {
       items: itemsMercadoPago,
       payer: payer,
-      back_urls: {
-        success: "http://localhost:5173/final",
-        failure: "http://localhost:5173/checkout",
-        pending: "http://localhost:5173/checkout"
-      },
-      auto_return: "approved"
+     back_urls: {
+  success: "https://tienda-siempremattes-q4beflkpe-mateos-projects-c22d40bd.vercel.app/final",
+  failure: "https://tienda-siempremattes-q4beflkpe-mateos-projects-c22d40bd.vercel.app/checkout",
+  pending: "https://tienda-siempremattes-q4beflkpe-mateos-projects-c22d40bd.vercel.app/checkout"
+},
+auto_return: "approved",
     });
 
     const response = await fetch(`${API_URL}/crear-preferencia`, {
@@ -118,6 +118,7 @@ const redirigirMercadoPago = async () => {
       navigate("/final");
     } else if (metodoPago === "mercado_pago") {
       setRedirigiendo(true);
+       enviarMail();
       await redirigirMercadoPago();
     }
   };
