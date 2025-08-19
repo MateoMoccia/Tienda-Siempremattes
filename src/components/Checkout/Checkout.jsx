@@ -39,12 +39,6 @@ const redirigirMercadoPago = async () => {
     console.log("Enviando datos a /crear-preferencia:", {
       items: itemsMercadoPago,
       payer: payer,
-     back_urls: {
-  success: "https://tienda-siempremattes-q4beflkpe-mateos-projects-c22d40bd.vercel.app/final",
-  failure: "https://tienda-siempremattes-q4beflkpe-mateos-projects-c22d40bd.vercel.app/checkout",
-  pending: "https://tienda-siempremattes-q4beflkpe-mateos-projects-c22d40bd.vercel.app/checkout"
-},
-auto_return: "approved",
     });
 
     const response = await fetch(`${API_URL}/crear-preferencia`, {
