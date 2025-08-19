@@ -5,7 +5,9 @@ import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase';
 import './ProductoLista.css';
 import { CarritoContext } from '../../Context/CarritoContext';
-const ProductosLista = ({ categoria }) => {
+
+
+const ProductosLista = ({ categoria, tipoFiltro, calidadFiltro, materialFiltro  }) => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
     const { agregarAlCarrito } = useContext(CarritoContext);
@@ -25,7 +27,20 @@ const ProductosLista = ({ categoria }) => {
     fetchProductos();
   }, []);
 
-  const productosFiltrados = productos.filter(producto => producto.categoria === categoria);
+  const productosFiltrados = productos.filter(producto => {
+    if (producto.categoria !== categoria) return false;
+
+  if (tipoFiltro !== "Todos" && producto.tipo !== tipoFiltro) return false; 
+ 
+  if (calidadFiltro !== "Todos" && producto.calidad !== calidadFiltro) return false; 
+
+  if (materialFiltro !== "Todos" && producto.material !== materialFiltro) return false; 
+
+    return true
+
+
+    
+  });
 
   if (loading) return <p>Cargando productos...</p>;
 

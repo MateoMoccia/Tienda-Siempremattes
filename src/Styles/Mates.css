@@ -84,3 +84,69 @@
   }
 }
 
+
+.filtros-container {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  margin: 20px 0;
+  flex-wrap: nowrap;
+}
+
+/* Contenedor individual para cada filtro */
+.filtro-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 150px;
+}
+
+/* Título arriba del select */
+.filtro-item label {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1C1C1C;
+  font-size: 16px;
+}
+
+/* Estilo común para los selects */
+.filtro-item select {
+  width: 160px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1.5px solid #1C1C1C;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.filtro-item select:focus {
+  border-color: #555;
+  outline: none;
+}
+
+/* Media query para móviles: filtros en columna */
+@media (max-width: 600px) {
+  .filtros-container {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .filtro-item select {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .filtro-item {
+    width: 100%;
+    max-width: 300px;
+    align-items: flex-start;
+  }
+
+  .filtro-item label {
+    font-size: 14px;
+  }
+}

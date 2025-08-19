@@ -1,39 +1,124 @@
-import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { CarritoContext } from '../../Context/CarritoContext'; 
-import './Checkout.css';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { CarritoContext } from "../../Context/CarritoContext";
+import "./Checkout.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { body } from "framer-motion/client";
 
 const Checkout = () => {
   const { productosEnCarrito, vaciarCarrito } = useContext(CarritoContext);
-  const [nombre, setNombre] = useState('');
-  const [email, setEmail] = useState('');
-  const [metodoPago, setMetodoPago] = useState('');
-  const [bloquearMetodoPago, setBloquearMetodoPago] = useState(false);
-  const [mostrarPago, setMostrarPago] = useState(false);
+  const [nombre, setNombre] = useState("");
+  const [email, setEmail] = useState("");
+  const [metodoPago, setMetodoPago] = useState("");
+  const [redirigiendo, setRedirigiendo] = useState(false);
   const navigate = useNavigate();
 
+const API_URL = import.meta.env.VITE_API_URL || "https://backend-siempremattes.onrender.com";
+
   const total = productosEnCarrito.reduce((acc, prod) => {
-    const precioLimpio = Number(String(prod.precio).replace(/\./g, ''));
+    const precioLimpio = Number(String(prod.precio).replace(/\./g, ""));
     const cantidad = Number(prod.cantidad);
     return acc + precioLimpio * cantidad;
   }, 0);
 
-  const handleSubmit = (e) => {
+const payer = {
+  name : nombre,
+  email : email
+}
+
+const itemsMercadoPago = productosEnCarrito.map((producto) => ({
+  title: String(producto.nombre),
+  unit_price: Number(producto.precio), // asegurarse que sea number
+  quantity: Number(producto.cantidad)   // asegurarse que sea number
+}));
+
+const redirigirMercadoPago = async () => {
+  try {
+    // Log de lo que vas a enviar
+    console.log("Enviando datos a /crear-preferencia:", {
+      items: itemsMercadoPago,
+      payer: payer,
+      back_urls: {
+        success: "http://localhost:5173/final",
+        failure: "http://localhost:5173/checkout",
+        pending: "http://localhost:5173/checkout"
+      },
+      auto_return: "approved"
+    });
+
+    const response = await fetch(`${API_URL}/crear-preferencia`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        items: itemsMercadoPago,
+        payer: payer,
+        back_urls: {
+          success: "http://localhost:5173/final",
+          failure: "http://localhost:5173/checkout",
+          pending: "http://localhost:5173/checkout"
+        },
+        auto_return: "approved"
+      }),
+    });
+
+    // Log del estado HTTP de la respuesta
+    console.log("Estado HTTP del backend:", response.status, response.statusText);
+
+    const data = await response.json();
+
+    // Log de lo que responde tu backend
+    console.log("Respuesta del backend (JSON):", data);
+
+    window.location.href = data.init_point;
+
+  } catch (error) {
+    console.error("Error redirigiendo a Mercado Pago:", error);
+    setRedirigiendo(false);
+    toast.error("No se pudo procesar el pago. Intentá nuevamente.");
+  }
+};
+
+
+  const enviarMail = () => {
+    fetch(`${API_URL}/enviar-mail`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email,
+        nombre,
+        metodoPago,
+      }),
+    }).catch((error) => {
+      console.error("Error enviando mail", error);
+    });
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!metodoPago) {
-      toast.error('Por favor, seleccioná un método de pago.');
+      toast.error("Por favor, seleccioná un método de pago.");
       return;
     }
 
-    if (metodoPago === 'contacto') {
+    if (productosEnCarrito.length === 0) {
+      toast.error("No hay productos en el carrito.");
+      return;
+    }
+
+    if (!nombre || !email) {
+      toast.error("Por favor completá nombre y correo electrónico.");
+      return;
+    }
+
+    if (metodoPago === "contacto") { 
       vaciarCarrito();
-      navigate('/final');
-    } else if (metodoPago === 'mercado_pago') {
-      setMostrarPago(true);
-      setBloquearMetodoPago(true);
+      enviarMail();
+      navigate("/final");
+    } else if (metodoPago === "mercado_pago") {
+      setRedirigiendo(true);
+      await redirigirMercadoPago();
     }
   };
 
@@ -69,15 +154,12 @@ const Checkout = () => {
               value={metodoPago}
               onChange={(e) => setMetodoPago(e.target.value)}
               required
-              disabled={bloquearMetodoPago}
             >
               <option value=""></option>
-              {!bloquearMetodoPago || metodoPago === 'contacto' ? (
-                <option value="contacto">Credito/Debito/Efectivo (arreglar con el vendedor)</option>
-              ) : null}
-              {!bloquearMetodoPago || metodoPago === 'mercado_pago' ? (
-                <option value="mercado_pago">Mercado Pago</option>
-              ) : null}
+              <option value="contacto">
+                Crédito/Débito/Efectivo (arreglar con el vendedor)
+              </option>
+              <option value="mercado_pago">Mercado Pago</option>
             </select>
           </label>
 
@@ -87,7 +169,8 @@ const Checkout = () => {
               {productosEnCarrito.length === 0 ? (
                 <li>No hay productos seleccionados.</li>
               ) : (
-                productosEnCarrito.map((producto, index) => (
+                productosEnCarrito.map((producto, index) => ( //LA FUNCION DE PRODUCTOS EN EL CARRITO ESTA ACA//
+                  
                   <li key={index}>
                     {producto.nombre} - {producto.cantidad} x {producto.precio} ARS
                   </li>
@@ -96,49 +179,14 @@ const Checkout = () => {
             </ul>
           </label>
 
-          <button type="submit" disabled={mostrarPago}>Confirmar Compra</button>
+          <button type="submit" disabled={redirigiendo}>
+            {redirigiendo ? "Redirigiendo..." : "Confirmar Compra"}
+          </button>
         </form>
-        <br />
 
-        {mostrarPago && metodoPago === 'mercado_pago' && (
-          <>
-            <div className="total-compra">
-              <strong>Total de la compra:</strong> {total.toLocaleString('es-AR')} ARS
-            </div>
-
-            <div className="pago-mercado-pago">
-              <p>Transferí el monto al alias:</p>
-              <p><strong>fran.gigliotti.mp</strong></p>
-              <p>o al CVU:</p>
-              <p><strong>0000003100012674127433</strong></p>
-
-              <a
-                className="link-mercado-pago"
-                href="mercadopago://"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const appScheme = "mercadopago://";
-                  const fallbackUrl = "https://www.mercadopago.com.ar/";
-                  window.location.href = appScheme;
-                  setTimeout(() => {
-                    window.location.href = fallbackUrl;
-                  }, 1000);
-                }}
-              >
-                Ir a pagar ahora 💳
-              </a>
-
-              <button
-                onClick={() => {
-                  vaciarCarrito();
-                  navigate('/final');
-                }}
-              >
-                Finalizar compra
-              </button>
-            </div>
-          </>
-        )}
+        <div className="total-compra" style={{ marginTop: "1rem" }}>
+          <strong>Total de la compra:</strong> {total.toLocaleString("es-AR")} ARS
+        </div>
       </div>
       <ToastContainer />
     </>
