@@ -13,7 +13,8 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import CarritoProvider from './Context/CarritoContext';  
 import Checkout from './components/Checkout/Checkout';
 import FinalScreen from './components/FinalScreen/FinalScreen'
-
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 
 
